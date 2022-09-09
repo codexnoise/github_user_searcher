@@ -1,8 +1,22 @@
 import React from "react";
 import { Stack, TextField, IconButton } from "@mui/material";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+import { useState } from "react";
 
-const Searcher = () => {
+const Searcher = (props) => {
+  const { setinputUser } = props;
+
+  const [valueInput, setValueInput] = useState("");
+
+  const onSearchValueChange = () => {
+    const inputValue = event.target.value;
+    setValueInput(inputValue);
+  };
+
+  const handleSubmit = () => {
+    setinputUser(valueInput);
+  };
+
   return (
     <Stack
       direction="row"
@@ -17,12 +31,14 @@ const Searcher = () => {
         variant="outlined"
         placeholder="octocat"
         size="small"
+        value={valueInput}
+        onChange={onSearchValueChange}
         sx={{
           width: "90%",
         }}
         InputProps={{
           endAdornment: (
-            <IconButton>
+            <IconButton onClick={handleSubmit}>
               <SearchSharpIcon />
             </IconButton>
           ),
