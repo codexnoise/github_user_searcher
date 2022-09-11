@@ -6,11 +6,31 @@ import getGithubUser from "./services/users";
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
-  const [userState, setUserState] = useState(inputUser);
+  const [userState, setUserState] = useState("inputUser");
+  const [notFound, setNotFound] = useState(false);
 
   const gettingUser = async (user) => {
     const userRes = await getGithubUser(user);
-    console.log("USER:", userRes);
+
+    if (userState === "octocat") {
+      console.log("XXXXXXXXXXXXXXXXXXXX");
+      localStorage.setItem("octocat", userRes);
+      console.log("YYYYYYYYYYYYYYYYYYYY");
+    }
+
+    if (userRes.message === "Not Found") {
+      const { octocat } = localStorage;
+      setinputUser(octocat);
+      setNotFound(true);
+    } else {
+      console.log("X: ", userState);
+
+      setUserState(userRes);
+      console.log("Y: ", userState);
+
+      setNotFound(false);
+    }
+    console.log("USER state:", userState);
   };
 
   useEffect(() => {
