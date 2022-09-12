@@ -3,35 +3,28 @@ import { Container } from "@mui/material";
 import Searcher from "./components/Searcher";
 import { useState, useEffect } from "react";
 import getGithubUser from "./services/users";
+import { ContactSupport } from "@mui/icons-material";
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
-  const [userState, setUserState] = useState("inputUser");
-  const [notFound, setNotFound] = useState(false);
+  const [userData, setUserData] = useState({});
 
   const gettingUser = async (user) => {
     const userRes = await getGithubUser(user);
 
-    if (userState === "octocat") {
-      console.log("XXXXXXXXXXXXXXXXXXXX");
-      localStorage.setItem("octocat", userRes);
-      console.log("YYYYYYYYYYYYYYYYYYYY");
+    if (inputUser === "octocat") {
+      localStorage.setItem("octocat", JSON.stringify(userRes));
     }
 
     if (userRes.message === "Not Found") {
-      const { octocat } = localStorage;
-      setinputUser(octocat);
-      setNotFound(true);
+      const ocotocat = JSON.parse(localStorage.getItem("octocat"));
+      setUserData({ ...ocotocat });
     } else {
-      console.log("X: ", userState);
-
-      setUserState(userRes);
-      console.log("Y: ", userState);
-
-      setNotFound(false);
+      setUserData({ ...userRes });
     }
-    console.log("USER state:", userState);
   };
+
+  console.log("USER DATA: ", userData);
 
   useEffect(() => {
     gettingUser(inputUser);
