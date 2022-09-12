@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import Searcher from "./components/Searcher";
 import { useState, useEffect } from "react";
 import getGithubUser from "./services/users";
-import { ContactSupport } from "@mui/icons-material";
+import UserCard from "./containers/UserCard";
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
@@ -45,6 +45,7 @@ const App = () => {
     >
       <div>Github User Searcher</div>
       <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
+      <UserCard userData={userData}></UserCard>
     </Container>
   );
 };
