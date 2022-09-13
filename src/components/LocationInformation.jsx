@@ -26,7 +26,7 @@ const LocationInformation = (props) => {
         <Stack>
           <TwitterIcon />
           {twitter_username !== null ? (
-            <Typography>{twitter_username}</Typography>
+            <Typography>{`@${twitter_username}`}</Typography>
           ) : (
             <Typography>Not avaible</Typography>
           )}
