@@ -10,11 +10,17 @@ const Description = (props) => {
 
   return (
     <>
-      <Stack>
+      <Stack
+        sx={{
+          justifyContent: "center",
+        }}
+      >
         {bio != null ? (
-          <Typography>{bio}</Typography>
+          <Typography variant="body1">{bio}</Typography>
         ) : (
-          <Typography>This user dont have bio information</Typography>
+          <Typography variant="body1">
+            This user dont have bio information
+          </Typography>
         )}
       </Stack>
       <PaperInformation userData={userData} />
