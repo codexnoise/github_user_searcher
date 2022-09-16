@@ -17,6 +17,12 @@ const Searcher = (props) => {
     setinputUser(valueInput);
   };
 
+  const handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
   return (
     <Stack
       direction="row"
@@ -33,6 +39,7 @@ const Searcher = (props) => {
         size="small"
         value={valueInput}
         onChange={onSearchValueChange}
+        onKeyPress={handleKeypress}
         sx={{
           width: "90%",
         }}
