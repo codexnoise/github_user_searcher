@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import Searcher from "./components/Searcher";
 import { useState, useEffect } from "react";
 import getGithubUser from "./services/users";
@@ -18,8 +18,6 @@ const App = () => {
     }
 
     if (userRes.message === "Not Found") {
-      //const ocotocat = JSON.parse(localStorage.getItem("octocat"));
-      //setUserData({ ...ocotocat });
       setUserNotFound(true);
     } else {
       setUserNotFound(false);
@@ -46,7 +44,7 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <div>Github User Searcher</div>
+      <Typography variant="h5">Github User Searcher</Typography>
       <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
       {userNotFound ? (
         <h2>404 USER NOT FOUND</h2>
