@@ -8,6 +8,7 @@ import UserCard from "./containers/UserCard";
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
   const [userData, setUserData] = useState({});
+  const [userNotFound, setUserNotFound] = useState(false);
 
   const gettingUser = async (user) => {
     const userRes = await getGithubUser(user);
@@ -17,9 +18,11 @@ const App = () => {
     }
 
     if (userRes.message === "Not Found") {
-      const ocotocat = JSON.parse(localStorage.getItem("octocat"));
-      setUserData({ ...ocotocat });
+      //const ocotocat = JSON.parse(localStorage.getItem("octocat"));
+      //setUserData({ ...ocotocat });
+      setUserNotFound(true);
     } else {
+      setUserNotFound(false);
       setUserData({ ...userRes });
     }
   };
@@ -45,7 +48,11 @@ const App = () => {
     >
       <div>Github User Searcher</div>
       <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
-      <UserCard userData={userData}></UserCard>
+      {userNotFound ? (
+        <h2>404 USER NOT FOUND</h2>
+      ) : (
+        <UserCard userData={userData}></UserCard>
+      )}
     </Container>
   );
 };
