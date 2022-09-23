@@ -4,6 +4,7 @@ import Searcher from "./components/Searcher";
 import { useState, useEffect } from "react";
 import getGithubUser from "./services/users";
 import UserCard from "./containers/UserCard";
+import UserNotFound from "./components/UserNotFound";
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
@@ -47,7 +48,7 @@ const App = () => {
       <Typography variant="h5">Github User Searcher</Typography>
       <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
       {userNotFound ? (
-        <h2>404 USER NOT FOUND</h2>
+        <UserNotFound />
       ) : (
         <UserCard userData={userData}></UserCard>
       )}
