@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import getGithubUser from "./services/users";
 import UserCard from "./containers/UserCard";
 import UserNotFound from "./components/UserNotFound";
+import "./components/UserNotFound.css";
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
