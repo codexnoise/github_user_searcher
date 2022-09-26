@@ -18,11 +18,12 @@ module.exports = {
       },
       { test: /\.html$/, use: [{ loader: "html-loader" }] },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
           "css-loader",
-          "sass-loader",
         ],
       },
       {
