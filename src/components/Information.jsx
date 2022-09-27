@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
+import joinedDate from "../services/formaters";
 
 const Information = (props) => {
   const { userData } = props;
@@ -9,7 +10,7 @@ const Information = (props) => {
     <>
       <Stack direction="row" sx={{ justifyContent: "space-between" }}>
         <Typography variant="h4">{name}</Typography>
-        <Typography variant="subtitle2">{created_at}</Typography>
+        <Typography variant="subtitle2">{joinedDate(created_at)}</Typography>
       </Stack>
       <Typography variant="caption">{`@${login}`}</Typography>
     </>
