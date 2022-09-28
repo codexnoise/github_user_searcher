@@ -33,7 +33,7 @@ const Searcher = (props) => {
     >
       <TextField
         id="outlined-based"
-        label="Github User"
+        label="username ..."
         variant="outlined"
         placeholder="octocat"
         size="small"

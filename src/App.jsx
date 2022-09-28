@@ -45,7 +45,9 @@ const App = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h5">Github User Searcher</Typography>
+      <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
+        devsearcher
+      </Typography>
       <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
       {userNotFound ? (
         <UserNotFound />
