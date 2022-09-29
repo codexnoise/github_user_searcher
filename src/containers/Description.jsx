@@ -16,9 +16,11 @@ const Description = (props) => {
         }}
       >
         {bio != null ? (
-          <Typography variant="body1">{bio}</Typography>
+          <Typography sx={{ fontFamily: "Courier New" }} variant="body1">
+            {bio}
+          </Typography>
         ) : (
-          <Typography variant="body1">
+          <Typography sx={{ fontFamily: "Courier New" }} variant="body1">
             This user dont have bio information
           </Typography>
         )}

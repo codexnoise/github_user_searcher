@@ -16,9 +16,13 @@ const LocationInformation = (props) => {
         <Stack direction="row" spacing={2} direction="row" spacing={2}>
           <LocationOnIcon />
           {location !== null ? (
-            <Typography>{location}</Typography>
+            <Typography sx={{ fontFamily: "Courier New" }}>
+              {location}
+            </Typography>
           ) : (
-            <Typography>Not avaible</Typography>
+            <Typography x={{ fontFamily: "Courier New" }}>
+              Not avaible
+            </Typography>
           )}
         </Stack>
       </Grid>
@@ -26,9 +30,13 @@ const LocationInformation = (props) => {
         <Stack direction="row" spacing={2}>
           <TwitterIcon />
           {twitter_username !== null ? (
-            <Typography>{`@${twitter_username}`}</Typography>
+            <Typography
+              sx={{ fontFamily: "Courier New" }}
+            >{`@${twitter_username}`}</Typography>
           ) : (
-            <Typography>Not avaible</Typography>
+            <Typography sx={{ fontFamily: "Courier New" }}>
+              Not avaible
+            </Typography>
           )}
         </Stack>
       </Grid>
@@ -37,10 +45,12 @@ const LocationInformation = (props) => {
           <LanguageIcon />
           {blog !== null && blog !== "" ? (
             <a target="_blank" href={blog}>
-              <Typography>{blog}</Typography>
+              <Typography sx={{ fontFamily: "Courier New" }}>{blog}</Typography>
             </a>
           ) : (
-            <Typography>Not avaible</Typography>
+            <Typography sx={{ fontFamily: "Courier New" }}>
+              Not avaible
+            </Typography>
           )}
         </Stack>
       </Grid>
@@ -48,9 +58,13 @@ const LocationInformation = (props) => {
         <Stack direction="row" spacing={2}>
           <BusinessIcon />
           {company !== null ? (
-            <Typography>{company}</Typography>
+            <Typography sx={{ fontFamily: "Courier New" }}>
+              {company}
+            </Typography>
           ) : (
-            <Typography>Not avaible</Typography>
+            <Typography sx={{ fontFamily: "Courier New" }}>
+              Not avaible
+            </Typography>
           )}
         </Stack>
       </Grid>

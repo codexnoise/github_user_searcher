@@ -9,10 +9,17 @@ const Information = (props) => {
   return (
     <>
       <Stack direction="row" sx={{ justifyContent: "space-between" }}>
-        <Typography variant="h4">{name}</Typography>
-        <Typography variant="subtitle2">{joinedDate(created_at)}</Typography>
+        <Typography sx={{ fontFamily: "Courier New" }} variant="h4">
+          {name}
+        </Typography>
+        <Typography sx={{ fontFamily: "Courier New" }} variant="subtitle2">
+          {joinedDate(created_at)}
+        </Typography>
       </Stack>
-      <Typography variant="caption">{`@${login}`}</Typography>
+      <Typography
+        sx={{ fontFamily: "Courier New" }}
+        variant="caption"
+      >{`@${login}`}</Typography>
     </>
   );
 };

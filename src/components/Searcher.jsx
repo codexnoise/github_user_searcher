@@ -42,6 +42,7 @@ const Searcher = (props) => {
         onKeyPress={handleKeypress}
         sx={{
           width: "90%",
+          fontFamily: "Courier New",
         }}
         InputProps={{
           endAdornment: (
