@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import Searcher from "./components/Searcher";
 import { useState, useEffect } from "react";
-import getGithubUser from "./services/users";
+import { getGithubUser, getGithubUserRepos } from "./services/users";
 import UserCard from "./containers/UserCard";
 import UserNotFound from "./components/UserNotFound";
 import { orange } from "@mui/material/colors";
@@ -15,11 +15,13 @@ import { orange } from "@mui/material/colors";
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
   const [userData, setUserData] = useState({});
+  const [userRepos, setUserRepos] = useState({});
   const [userNotFound, setUserNotFound] = useState(false);
 
   const theme = createTheme({
     status: {
       danger: orange[500],
+      background: "red",
     },
   });
 
@@ -38,10 +40,20 @@ const App = () => {
     }
   };
 
+  const gettingRepos = async (user) => {
+    console.log("NOT FOUND: ", userNotFound);
+    if (!userNotFound) {
+      const reposRes = await getGithubUserRepos(user);
+      setUserRepos({ ...reposRes });
+    }
+  };
+
   console.log("USER DATA: ", userData);
+  console.log("USER REPOS: ", userRepos);
 
   useEffect(() => {
     gettingUser(inputUser);
+    gettingRepos(inputUser);
   }, [inputUser]);
 
   return (
@@ -49,8 +61,8 @@ const App = () => {
       <Container
         sx={{
           background: "whitesmoke",
-          width: "80vw",
-          height: "500px",
+          width: "auto",
+          height: "auto",
           borderRadius: "16px",
           marginTop: "50px",
           display: "flex",

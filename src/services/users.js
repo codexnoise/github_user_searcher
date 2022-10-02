@@ -1,6 +1,6 @@
 import { urlFetch } from "../constants";
 
-const getGithubUser = async (user) => {
+export const getGithubUser = async (user) => {
   const res = await fetch(`${urlFetch}${user}`, {
     method: "GET",
   });
@@ -8,4 +8,10 @@ const getGithubUser = async (user) => {
   return payload;
 };
 
-export default getGithubUser;
+export const getGithubUserRepos = async (user) => {
+  const res = await fetch(`${urlFetch}${user}/repos`, {
+    method: "GET",
+  });
+  const payload = res.json();
+  return payload;
+};
