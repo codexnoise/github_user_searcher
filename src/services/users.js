@@ -15,3 +15,11 @@ export const getGithubUserRepos = async (user) => {
   const payload = res.json();
   return payload;
 };
+
+export const getGithubUserLanguages = async (repo) => {
+  const res = await fetch(repo, {
+    method: "GET",
+  });
+  const payload = res.json();
+  return payload;
+};
