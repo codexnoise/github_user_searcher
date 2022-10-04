@@ -50,10 +50,24 @@ const App = () => {
 
     if (!reposRes.message) {
       setUserRepos({ ...reposRes });
-      const languages = await Promise.all(
-        reposRes.map((repo) => getGithubUserLanguages(repo.languages_url))
-      );
-      setUseruserLanguages(languages);
+
+      let languages = [];
+      reposRes.map((repo) => {
+        if (repo.language) {
+          languages.push(repo.language);
+        }
+      });
+
+      const unicos = languages.filter((valor, indice) => {
+        return languages.indexOf(valor) === indice;
+      });
+      setUseruserLanguages(unicos);
+
+      // setUserRepos({ ...reposRes });
+      // const languages = await Promise.all(
+      //   reposRes.map((repo) => getGithubUserLanguages(repo.languages_url))
+      // );
+      // setUseruserLanguages(languages);
     }
   };
 
