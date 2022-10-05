@@ -51,17 +51,17 @@ const App = () => {
     if (!reposRes.message) {
       setUserRepos({ ...reposRes });
 
-      let languages = [];
+      let repoLanguages = [];
       reposRes.map((repo) => {
         if (repo.language) {
-          languages.push(repo.language);
+          repoLanguages.push(repo.language);
         }
       });
 
-      const unicos = languages.filter((valor, indice) => {
-        return languages.indexOf(valor) === indice;
+      const languages = repoLanguages.filter((valor, indice) => {
+        return repoLanguages.indexOf(valor) === indice;
       });
-      setUseruserLanguages(unicos);
+      setUseruserLanguages(languages);
 
       // setUserRepos({ ...reposRes });
       // const languages = await Promise.all(
@@ -101,7 +101,10 @@ const App = () => {
         {userNotFound ? (
           <UserNotFound />
         ) : (
-          <UserCard userData={userData}></UserCard>
+          <UserCard
+            userData={userData}
+            userLanguages={userLanguages}
+          ></UserCard>
         )}
       </Container>
     </ThemeProvider>

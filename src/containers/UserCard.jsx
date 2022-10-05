@@ -4,7 +4,7 @@ import Information from "../components/Information";
 import Description from "../containers/Description";
 
 const UserCard = (props) => {
-  const { userData } = props;
+  const { userData, userLanguages } = props;
   const { avatar_url } = userData;
 
   return (
@@ -29,7 +29,7 @@ const UserCard = (props) => {
           }}
         >
           <Information userData={userData} />
-          <Description userData={userData} />
+          <Description userData={userData} userLanguages={userLanguages} />
         </Stack>
       </Grid>
     </Grid>

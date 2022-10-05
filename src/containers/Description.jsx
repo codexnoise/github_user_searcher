@@ -3,9 +3,10 @@ import { Stack } from "@mui/system";
 import { Typography } from "@mui/material";
 import PaperInformation from "../components/PaperInformation";
 import LocationInformation from "../components/LocationInformation";
+import Lenguages from "../components/Lenguages";
 
 const Description = (props) => {
-  const { userData } = props;
+  const { userData, userLanguages } = props;
   const { bio } = userData;
 
   return (
@@ -25,6 +26,7 @@ const Description = (props) => {
           </Typography>
         )}
       </Stack>
+      <Lenguages userLanguages={userLanguages} />
       <PaperInformation userData={userData} />
       <LocationInformation userData={userData}></LocationInformation>
     </>
