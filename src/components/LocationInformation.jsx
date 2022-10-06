@@ -13,7 +13,7 @@ const LocationInformation = (props) => {
   return (
     <Grid container spacing={2} sx={{ marginTop: "15px" }}>
       <Grid item xs={6}>
-        <Stack direction="row" spacing={2} direction="row" spacing={2}>
+        <Stack direction="row" spacing={2}>
           <LocationOnIcon />
           {location !== null ? (
             <Typography sx={{ fontFamily: "Courier New" }}>

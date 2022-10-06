@@ -4,9 +4,10 @@ const Lenguages = (props) => {
   const { userLanguages } = props;
   return (
     <div>
-      {userLanguages.map((lenguage) => {
-        return <li>{lenguage}</li>;
-      })}
+      Lenguage(s):
+      {userLanguages.map((lenguage) => (
+        <li key={lenguage}>{lenguage}</li>
+      ))}
     </div>
   );
 };

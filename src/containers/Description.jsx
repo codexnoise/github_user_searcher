@@ -26,7 +26,11 @@ const Description = (props) => {
           </Typography>
         )}
       </Stack>
-      <Lenguages userLanguages={userLanguages} />
+      {userLanguages.length ? (
+        <Lenguages userLanguages={userLanguages} />
+      ) : (
+        <></>
+      )}
       <PaperInformation userData={userData} />
       <LocationInformation userData={userData}></LocationInformation>
     </>
