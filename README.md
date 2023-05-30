@@ -1,4 +1,4 @@
-# Github User Searcher
+# Github User Searcher v1.0.0
 This web app for search users of github and show the principal information of the user.
 
 ## Tech Stack
