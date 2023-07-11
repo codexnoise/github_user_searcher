@@ -5,8 +5,8 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "github_user_searcher/bundle.js",
-    publicPath: "/github_user_searcher/",
+    filename: "bundle.js",
+    publicPath: "/",
   },
   resolve: { extensions: [".js", ".jsx"] },
   module: {
