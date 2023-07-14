@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/github_user_searcher/static/js/main.eb828062.js",
+    "index.html": "/github_user_searcher/index.html",
+    "main.eb828062.js.map": "/github_user_searcher/static/js/main.eb828062.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.eb828062.js"
+  ]
+}
