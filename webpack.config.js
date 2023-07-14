@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "github_user_searcher/bundle.js",
-    publicPath: "/github_user_searcher/",
+    publicPath: "/",
   },
   resolve: { extensions: [".js", ".jsx"] },
   module: {
