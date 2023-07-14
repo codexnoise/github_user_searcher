@@ -7,7 +7,7 @@ const GitHubUserSearcher = () => {
     return (
     <BrowserRouter >
         <Routes>
-          <Route path="/pokedex" element={<App />} />
+          <Route path="/github_user_searcher" element={<App />} />
           <Route path="/" element={<App />} />
         </Routes>
     </BrowserRouter>)
