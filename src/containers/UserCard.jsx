@@ -9,8 +9,8 @@ const UserCard = (props) => {
   const { avatar_url } = userData;
 
   return (
-    <Grid container spacing={2} sx={{ marginTop: "15px", backgroundColor: 'red'}}>
-      <Grid item xs={isMobile ? 12 : 3} sx={{ backgroundColor: 'green'}}>
+    <Grid container spacing={2} sx={{ marginTop: "15px"}}>
+      <Grid item xs={isMobile ? 12 : 3}>
         <CardMedia
           component="img"
           image={avatar_url}
@@ -20,7 +20,7 @@ const UserCard = (props) => {
           }}
         />
       </Grid>
-      <Grid item xs={isMobile ? 12 : 9} sx={{ backgroundColor: 'yellow'}}> 
+      <Grid item xs={isMobile ? 12 : 9}> 
         <Stack
           direction="column"
           spacing={1}
