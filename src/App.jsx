@@ -62,12 +62,6 @@ const App = () => {
         return repoLanguages.indexOf(valor) === indice;
       });
       setUseruserLanguages(languages);
-
-      // setUserRepos({ ...reposRes });
-      // const languages = await Promise.all(
-      //   reposRes.map((repo) => getGithubUserLanguages(repo.languages_url))
-      // );
-      // setUseruserLanguages(languages);
     }
   };
 
@@ -83,6 +77,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container
+        md={6}
         sx={{
           background: "whitesmoke",
           width: "auto",
@@ -94,8 +89,8 @@ const App = () => {
           alignItems: "center",
         }}
       >
-        <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
-          devsearcher
+        <Typography sx={{ fontFamily: "Courier New", fontWeight: 'bold' }} variant="h4">
+          dev Searcher
         </Typography>
         <Searcher inputUser={inputUser} setinputUser={setinputUser}></Searcher>
         {userNotFound ? (
