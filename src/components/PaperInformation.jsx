@@ -1,6 +1,7 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
+import { isMobile } from 'react-device-detect';
 
 const PaperInformation = (props) => {
   const { userData } = props;
@@ -10,7 +11,7 @@ const PaperInformation = (props) => {
     <Paper eleveation={3}>
       <Stack
         spacing={3}
-        direction="row"
+        direction={isMobile ? "column" : "row"}
         sx={{ justifyContent: "space-evenly", margin: "20px" }}
       >
         <Stack>

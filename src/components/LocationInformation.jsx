@@ -5,6 +5,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LanguageIcon from "@mui/icons-material/Language";
 import BusinessIcon from "@mui/icons-material/Business";
+import { isMobile } from 'react-device-detect';
 
 const LocationInformation = (props) => {
   const { userData } = props;
@@ -12,7 +13,7 @@ const LocationInformation = (props) => {
 
   return (
     <Grid container spacing={2} sx={{ marginTop: "15px" }}>
-      <Grid item xs={6}>
+      <Grid item xs={isMobile ? 12 : 6}>
         <Stack direction="row" spacing={2}>
           <LocationOnIcon />
           {location !== null ? (
@@ -26,7 +27,7 @@ const LocationInformation = (props) => {
           )}
         </Stack>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={isMobile ? 12 : 6}>
         <Stack direction="row" spacing={2}>
           <TwitterIcon />
           {twitter_username !== null ? (
@@ -40,7 +41,7 @@ const LocationInformation = (props) => {
           )}
         </Stack>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={isMobile ? 12 : 6}>
         <Stack direction="row" spacing={2}>
           <LanguageIcon />
           {blog !== null && blog !== "" ? (
@@ -54,7 +55,7 @@ const LocationInformation = (props) => {
           )}
         </Stack>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={isMobile ? 12 : 6}>
         <Stack direction="row" spacing={2}>
           <BusinessIcon />
           {company !== null ? (
