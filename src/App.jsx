@@ -65,10 +65,6 @@ const App = () => {
     }
   };
 
-  console.log("USER DATA: ", userData);
-  console.log("USER REPOS: ", userRepos);
-  console.log("USER LEN: ", userLanguages);
-
   useEffect(() => {
     gettingUser(inputUser);
     gettingRepos(inputUser);
@@ -77,7 +73,6 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container
-        md={6}
         sx={{
           background: "whitesmoke",
           width: "auto",
