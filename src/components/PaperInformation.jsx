@@ -10,31 +10,31 @@ const PaperInformation = (props) => {
   return (
     <Paper eleveation={3}>
       <Stack
-        spacing={3}
+        spacing={isMobile ? 0 : 3}
         direction={isMobile ? "column" : "row"}
-        sx={{ justifyContent: "space-evenly", margin: "20px" }}
+        sx={{ justifyContent: "space-evenly", marginLeft: "0px 0px 0px 10px" }}
       >
-        <Stack>
+        <Stack direction = {isMobile ? 'row' : 'column'}>
           <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
-            Repos
+            Repos 
           </Typography>
-          <Typography sx={{ fontFamily: "Courier New" }} variant="h6">
+          <Typography sx={{ fontFamily: "Courier New", marginLeft: isMobile ? '12px' : '0'}} variant="h6">
             {public_repos}
           </Typography>
         </Stack>
-        <Stack>
+        <Stack direction = {isMobile ? 'row' : 'column' }>
           <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
             Followers
           </Typography>
-          <Typography sx={{ fontFamily: "Courier New" }} variant="h6">
+          <Typography sx={{ fontFamily: "Courier New", marginLeft: isMobile ? '12px' : '0' }} variant="h6">
             {followers}
           </Typography>
         </Stack>
-        <Stack>
+        <Stack direction = {isMobile ? 'row' : 'column'}> 
           <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
             Following
           </Typography>
-          <Typography sx={{ fontFamily: "Courier New" }} variant="h6">
+          <Typography sx={{ fontFamily: "Courier New", marginLeft: isMobile ? '12px' : '0' }} variant="h6">
             {following}
           </Typography>
         </Stack>

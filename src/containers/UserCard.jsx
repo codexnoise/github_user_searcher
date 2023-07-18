@@ -27,7 +27,7 @@ const UserCard = (props) => {
           direction="column"
           spacing={1}
           sx={{
-            margin: isMobile ? "5px" : "30px",
+            margin: isMobile ? "0px" : "30px",
             padding: '0',
           }}
         >
