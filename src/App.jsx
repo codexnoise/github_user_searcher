@@ -78,7 +78,7 @@ const App = () => {
           width: "auto",
           height: "auto",
           borderRadius: "16px",
-          marginTop: "50px",
+          marginTop: "10px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

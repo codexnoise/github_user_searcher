@@ -9,23 +9,26 @@ const UserCard = (props) => {
   const { avatar_url } = userData;
 
   return (
-    <Grid container spacing={2} sx={{ marginTop: "15px"}}>
-      <Grid item xs={isMobile ? 12 : 3}>
+    <Grid container spacing={2} sx={{ marginTop: "0px"}}>
+      <Grid item xs={isMobile ? 12 : 3} sx={{display: 'flex', justifyContent: 'center',}}>
         <CardMedia
           component="img"
           image={avatar_url}
           alt="Github User Avatar"
           sx={{
             borderRadius: "50%",
+            maxWidth: isMobile ? '150px' : '300px',
+            maxHeight: isMobile ? '150px' : '300px',
           }}
         />
       </Grid>
-      <Grid item xs={isMobile ? 12 : 9}> 
+      <Grid item xs={isMobile ? 12 : 9} sx={{ padding: "0px !important"}}> 
         <Stack
           direction="column"
           spacing={1}
           sx={{
-            margin: "30px",
+            margin: isMobile ? "5px" : "30px",
+            padding: '0',
           }}
         >
           <Information userData={userData} />
