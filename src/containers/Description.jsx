@@ -4,6 +4,7 @@ import { Typography } from "@mui/material";
 import PaperInformation from "../components/PaperInformation";
 import LocationInformation from "../components/LocationInformation";
 import Lenguages from "../components/Lenguages";
+import { isMobile } from 'react-device-detect';
 
 const Description = (props) => {
   const { userData, userLanguages } = props;
@@ -14,6 +15,7 @@ const Description = (props) => {
       <Stack
         sx={{
           justifyContent: "center",
+          marginLeft: isMobile ? '10px !important' : '0px',
         }}
       >
         {bio != null ? (

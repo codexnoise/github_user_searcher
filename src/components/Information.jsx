@@ -9,7 +9,8 @@ const Information = (props) => {
   const { name, login, created_at } = userData;
   return (
     <>
-      <Stack direction={isMobile ? "column" : "row"} sx={{ justifyContent: "space-between", marginLeft: '10px' }}>
+      <Stack direction={isMobile ? "column" : "row"}
+             sx={{ justifyContent: "space-between", marginLeft: isMobile ? '10px' : '0px' }}>
         <Typography sx={{ fontFamily: "Courier New" }} variant="h4">
           {name}
         </Typography>

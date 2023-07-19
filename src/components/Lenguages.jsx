@@ -4,7 +4,8 @@ import React from "react";
 const Lenguages = (props) => {
   const { userLanguages } = props;
 
-  const lenguages = userLanguages.join(", ");
+  const lenguages = "- ".concat(userLanguages.join(", "));
+
   return (
     <Typography sx={{ fontFamily: "Courier New" }} variant="h6">
       {` ${lenguages}`}
