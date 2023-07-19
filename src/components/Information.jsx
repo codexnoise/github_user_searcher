@@ -9,7 +9,7 @@ const Information = (props) => {
   const { name, login, created_at } = userData;
   return (
     <>
-      <Stack direction={isMobile ? "column" : "row"} sx={{ justifyContent: "space-between" }}>
+      <Stack direction={isMobile ? "column" : "row"} sx={{ justifyContent: "space-between", marginLeft: '10px' }}>
         <Typography sx={{ fontFamily: "Courier New" }} variant="h4">
           {name}
         </Typography>
@@ -24,16 +24,16 @@ const Information = (props) => {
           </Typography>
         )}
       </Stack>
-        {isMobile ? (
-          <Typography sx={{ fontFamily: "Courier New" }} variant="caption"> 
-            {joinedDate(created_at)}
-          </Typography>
-          ) : (
-          <Typography
-            sx={{ fontFamily: "Courier New" }}
-            variant="subtitle1"
-          >{`@${login}`}</Typography>
-        )}
+      {isMobile ? (
+        <Typography sx={{ fontFamily: "Courier New", marginLeft: '10px !important' }} variant="caption"> 
+          {joinedDate(created_at)}
+        </Typography>
+        ) : (
+        <Typography
+          sx={{ fontFamily: "Courier New", marginLeft: '10px' }}
+          variant="subtitle1"
+        >{`@${login}`}</Typography>
+      )}
     </>
   );
 };

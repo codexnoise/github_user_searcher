@@ -2,6 +2,7 @@ import React from "react";
 import { Stack, TextField, IconButton } from "@mui/material";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { useState } from "react";
+import { isMobile } from "react-device-detect";
 
 const Searcher = (props) => {
   const { setinputUser } = props;
@@ -27,7 +28,7 @@ const Searcher = (props) => {
     <Stack
       direction="row"
       sx={{
-        marginTop: "30px",
+        marginTop: isMobile ? "3px" : "30px",
         width: "80%",
       }}
     >

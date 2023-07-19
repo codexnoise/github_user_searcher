@@ -12,7 +12,7 @@ const PaperInformation = (props) => {
       <Stack
         spacing={isMobile ? 0 : 3}
         direction={isMobile ? "column" : "row"}
-        sx={{ justifyContent: "space-evenly", marginLeft: "0px 0px 0px 10px" }}
+        sx={{ justifyContent: "space-evenly", margin: "0px 0px 0px 15px" }}
       >
         <Stack direction = {isMobile ? 'row' : 'column'}>
           <Typography sx={{ fontFamily: "Courier New" }} variant="h5">
