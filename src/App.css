@@ -1,0 +1,8 @@
+footer {
+    font-family: "Courier New";
+    width: 100%;
+    background-color: whitesmoke ;
+    position: fixed;
+    bottom: 0;
+    text-align: center; 
+  }

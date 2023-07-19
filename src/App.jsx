@@ -15,6 +15,8 @@ import {
 import UserCard from "./containers/UserCard";
 import UserNotFound from "./components/UserNotFound";
 import { orange } from "@mui/material/colors";
+import './App.css'
+
 
 const App = () => {
   const [inputUser, setinputUser] = useState("octocat");
@@ -97,6 +99,7 @@ const App = () => {
           ></UserCard>
         )}
       </Container>
+      <footer>developed with 💚 by @noisecodex</footer>
     </ThemeProvider>
   );
 };
