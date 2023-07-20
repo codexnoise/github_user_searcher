@@ -9,9 +9,17 @@ const UserNotFound = () => {
         spacing={1}
         sx={{
           margin: "50px",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <Typography variant="h4">404 User Not Found</Typography>
+        <Typography sx={{ fontFamily: "Courier New", fontWeight: 'bold' }} variant="h1">
+          404 
+        </Typography>
+        <Typography sx={{ fontFamily: "Courier New", fontWeight: 'bold', }} variant="h6">
+          developer not found
+        </Typography>
       </Stack>
     </>
   );
