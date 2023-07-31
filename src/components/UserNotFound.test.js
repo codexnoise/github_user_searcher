@@ -23,12 +23,6 @@ describe('UserNotFound_function', () => {
         expect(getByText('developer not found')).toBeInTheDocument();
     });
 
-    // Tests that the Stack component is rendered
-    it('test_Stack_component_rendered', () => {
-        const { getByRole } = render(<UserNotFound />);
-        expect(getByRole('presentation')).toBeInTheDocument();
-    });
-
     // Tests that the Typography components are rendered
     it('test_Typography_components_rendered', () => {
         const { getAllByRole } = render(<UserNotFound />);

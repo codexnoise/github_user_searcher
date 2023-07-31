@@ -7,6 +7,7 @@ const UserNotFound = () => {
       <Stack
         direction="column"
         spacing={1}
+        role="presentation"
         sx={{
           margin: "50px",
           display: 'flex',
