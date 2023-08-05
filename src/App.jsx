@@ -99,7 +99,7 @@ const App = () => {
           ></UserCard>
         )}
       </Container>
-      <footer>developed with 💚 by @noisecodex</footer>
+      <footer>developed with 💚 by @codexnoise</footer>
     </ThemeProvider>
   );
 };
